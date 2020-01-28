@@ -1,0 +1,133 @@
+# Homework excersize 4.5
+
+# adding package
+library(tidyverse)
+
+# selecting only one column: "sites"
+lam_site <- laminaria %>%
+  select(site)
+
+# putting total lengyh in its own column
+total_length_column <- laminaria %>% 
+  select(total_length)
+
+# devide by two
+t_l_h <- total_length_column/2
+
+#add only the values less than 100
+total_length_first <- t_l_h[(t_l_h[,1]<100),]
+
+# show in data table
+total_length_half <- as.tibble(total_length_half)
+
+# Creating dataframe of the columns I will be using
+
+BL_ST <- laminaria %>% 
+  select(site, blade_length)
+
+# calculating the number of observations as well as the mean, max a min value for balde length at each site
+
+kom <- BL_ST %>%
+  filter(site == "Kommetjie")
+kom_obser <- nrow(kom)
+kom_final <- kom %>% 
+  summarise(mean_length = mean(blade_length), min_length = min(blade_length), max_length = max(blade_length))
+
+
+bord_n <- BL_ST %>% 
+  filter(site == "Bordjiestif North")
+bor_n_obser <- nrow(bord_n)
+bor_n_final <- bord_n %>% 
+  summarise(mean_length = mean(blade_length), min_length = min(blade_length), max_length = max(blade_length))
+
+
+oli <- BL_ST %>% 
+  filter(site=="Olifantsbos")
+oli_obser <- nrow(oli)
+oli_final <- oli %>% 
+  summarise(mean_length = mean(blade_length), min_length = min(blade_length), max_length = max(blade_length))
+
+
+buf <- BL_ST %>% 
+  filter(site == "Buffels")
+buf_ober <- nrow(buf)
+buf_final <- buf %>% 
+  summarise(mean_length = mean(blade_length), min_length = min(blade_length), max_length = max(blade_length))
+
+buf_s <- BL_ST %>% 
+  filter(site == "Buffels South")
+buf_s_ober <- nrow(buf_s)
+buf_s__final <- buf_s %>% 
+  summarise(mean_length = mean(blade_length), min_length = min(blade_length), max_length = max(blade_length))
+
+
+mill <- BL_ST %>% 
+  filter( site == "Miller's Point")
+mill_ober <- nrow(mill)
+mill_final <- mill %>% 
+  summarise(mean_length = mean(blade_length), min_length = min(blade_length), max_length = max(blade_length))
+
+
+bbn <-  BL_ST %>% 
+  filter( site == "Baboon Rock")
+bbn_ober <- nrow(bbn)
+bbn_final <- bbn %>% 
+  summarise(mean_length = mean(blade_length), min_length = min(blade_length), max_length = max(blade_length))
+
+
+Bb <- BL_ST %>% 
+  filter(site == "Betty's Bay")
+Bb_ober <- nrow(Bb)
+Bb_final <- Bb %>% 
+  summarise(mean_length = mean(blade_length), min_length = min(blade_length), max_length = max(blade_length))
+
+
+rr <- BL_ST %>% 
+  filter(site == "Roman Rock")
+rr_ober <- nrow(rr)
+rr_final <- rr %>% 
+  summarise(mean_length = mean(blade_length), min_length = min(blade_length), max_length = max(blade_length))
+
+
+af <- BL_ST %>% 
+  filter(site == "A-Frame")
+af_ober <- nrow(af)
+af_final <- af %>% 
+  summarise(mean_length = mean(blade_length), min_length = min(blade_length), max_length = max(blade_length))
+
+
+br <- BL_ST %>% 
+  filter(site == "Batsata Rock")
+br_ober <- nrow(br)
+br__final <- br %>% 
+  summarise(mean_length = mean(blade_length), min_length = min(blade_length), max_length = max(blade_length))
+
+
+sp <- BL_ST %>% 
+  filter(site == "Sea Point")
+sp_ober <- nrow(sp)
+sp_final <- sp %>% 
+  summarise(mean_length = mean(blade_length), min_length = min(blade_length), max_length = max(blade_length))
+
+summarise(mean_length = mean(blade_length), min_length = min(blade_length), max_length = max(blade_length)) 
+
+rb<- BL_ST %>% 
+  filter(site == "Rocky Bank")
+rb_ober <- nrow(rb)
+rb_final <- rb %>% 
+  summarise(mean_length = mean(blade_length), min_length = min(blade_length), max_length = max(blade_length))
+
+# Selecting all the columns that i will use and ad them to same dataframe
+
+weight_col <- laminaria %>% 
+  select(region, site, blade_weight, stipe_length)
+
+#finding the max weight from the dataframe
+
+max_weight <-weight_col %>% 
+  select(blade_weight) %>% 
+  summarise(max_w = max(blade_weight))
+
+# Presenting the row with the max weight value
+
+final_row_of_max <- weight_col[c(132),]
