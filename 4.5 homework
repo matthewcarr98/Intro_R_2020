@@ -131,3 +131,8 @@ max_weight <-weight_col %>%
 # Presenting the row with the max weight value
 
 final_row_of_max <- weight_col[c(132),]
+
+
+# Very long way of doing it but you will learn later on more techniques on how to do this efficiently
+# Very neat script. It would be good to always add comments after each line just to show that you understand the code
+# Overall mark for day 1: 8/10
