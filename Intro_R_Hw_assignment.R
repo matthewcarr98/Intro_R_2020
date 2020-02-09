@@ -204,7 +204,7 @@ cats_unite <- unite(cats_sep, "total_time", minutes, seconds)
 library(readr)
 
 #loading in downloaded csv file with the data
-cfseal <- read_csv("C:/Users/Chelsea/Desktop/Lab 4/cfseal.csv")
+cfseal <- read_csv("cfseal.csv")
 View(cfseal)
 
 
