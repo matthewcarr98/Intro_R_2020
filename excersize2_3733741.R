@@ -78,9 +78,9 @@ plot_lam <- lam_sel %>%
   ggplot(aes(x = blade_length, y = blade_weight, colour = site)) + 
   geom_point() + 
   geom_line(aes(x = blade_length, y = blade_weight)) +
-  scale_x_continuous(breaks = seq(100, 175, 25)) +
-  scale_y_continuous(breaks = seq(0, 3, 1)) +
-  facet_wrap(.~site)+#
+  scale_x_continuous(breaks = seq(100, 175, 25)) +# creating a contineuos scale from a 100 to 175 , in intervals of 25
+  scale_y_continuous(breaks = seq(0, 3, 1)) +# same as above
+  facet_wrap(.~site)+## to add all the different graphs together from the false bay (FB)
   labs(x= "blade length", y = "blade weight") +
   scale_color_brewer(palette = "Accent")
 plot_lam
@@ -103,7 +103,7 @@ plot_lam_fix <- lam_sel %>%
 plot_lam_fix
 
 
-arrange <-ggarrange(plot_lam, plot_lam_fix, 
+arrange <-ggarrange(plot_lam, plot_lam_fix, # fixing both plots to one image
           labels = c("A", "B"),
           ncol = 2)
 
